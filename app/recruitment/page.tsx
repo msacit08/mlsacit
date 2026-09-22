@@ -777,9 +777,20 @@ const RecruitmentForm: React.FC = () => {
                             {/* Semester Checkbox */}
                             <div className="space-y-2">
                                 <label className="block text-xs sm:text-sm font-semibold text-blue-200">
-                                    Are you a 3rd Semester or MCA student? <span className="text-yellow-400">*</span>
+                                    Which semester are you currently in? <span className="text-yellow-400">*</span>
                                 </label>
                                 <div className="flex flex-col space-y-3"> 
+                                    <label className="flex items-center space-x-3 text-sm sm:text-base">
+                                        <input
+                                            type="radio"
+                                            name="studentType"
+                                            value="1st Semester"
+                                            checked={formData.studentType === "1st Semester"}
+                                            onChange={handleChange}
+                                            className="form-radio w-6 h-6" // Increase size
+                                        />
+                                        <span>1st Semester</span>
+                                    </label>
                                     <label className="flex items-center space-x-3 text-sm sm:text-base">
                                         <input
                                             type="radio"
@@ -800,7 +811,7 @@ const RecruitmentForm: React.FC = () => {
                                             onChange={handleChange}
                                             className="form-radio w-6 h-6" // Increase size
                                         />
-                                        <span>MCA student</span>
+                                        <span>MCA Student</span>
                                     </label>
                                 </div>
                                 {validated && !formData.studentType && (
